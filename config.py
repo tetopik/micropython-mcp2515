@@ -41,10 +41,9 @@ print('FREQ\t: ', freq(), '\nSPI\t: ', _spi, '\nCS\t: ', _cs_pin)
 can_bus = CAN(
     _spi, 
     _cs_pin,
-    baudrate     = 500_000,    # 125_000, 500_000, 1_000_000, ect  (bps)
+    baudrate     = 500_000,    # 125_000, 500_000, 1_000_000, etc  (bps)
     crystal_freq = 8_000_000,  # 8_000_000, 10_000_000, 16_000_000 (Hz)
     loopback     = False,
     silent       = False,
     auto_restart = False,
-    debug        = False
-    )
+    debug        = False)
