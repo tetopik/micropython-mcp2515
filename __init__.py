@@ -238,8 +238,8 @@ def _tx_buffer_status_decode(status_byte):
 class MCP2515:  # pylint:disable=too-many-instance-attributes
     """A common shared-bus protocol.
 
-        :param ~busio.SPI spi: The SPI bus used to communicate with the MCP2515
-        :param ~digitalio.DigitalInOut cs_pin:  SPI bus enable pin
+        :param ~umachine.SPI spi: The SPI object used to communicate with the MCP2515
+        :param ~umachine.Pin.OUT cs_pin:  SPI bus enable pin
         :param int baudrate: The bit rate of the bus in Hz. All devices on\
             the bus must agree on this value. Defaults to 250000.
         :param Literal crystal_freq: MCP2515 crystal frequency. Valid values are:\
