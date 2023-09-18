@@ -4,7 +4,6 @@ from utime import sleep
 from umachine import Pin
 from micropython import const
 from .canio import *
-from .timer import Timer
 
 try:
     from typing_extensions import Literal
