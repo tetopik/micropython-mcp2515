@@ -1,4 +1,4 @@
-from mcp2515.config import _spi, _cs_pin
+from mcp2515.config import spi, CS_PIN
 from mcp2515 import MCP2515 as CAN
 
 from mcp2515.canio import (
@@ -8,10 +8,9 @@ from mcp2515.canio import (
     BusState,
 )
 
-CAN_TYPE = "MCP2515"
 
 def builtin_bus_factory():
-    return CAN(_spi, _cs_pin, loopback=True, silent=True)
+    return CAN(spi, CS_PIN, loopback=True, silent=True)
 
 
 ################################################################
@@ -442,14 +441,10 @@ test_suite = [
     test_listener_deinit,
 ]
 # set filter tests
-if CAN_TYPE == "SAM-E":
-    test_suite.append(test_filters1)
-    test_suite.append(test_filters2)
-elif CAN_TYPE == "MCP2515":
-    test_suite.append(test_mcp_standard_id_exact_filters)
-    test_suite.append(test_mcp_standard_id_masked_filters)
-    test_suite.append(test_mcp_extended_id_exact_filters)
-    test_suite.append(test_mcp_extended_id_masked_filters)
+test_suite.append(test_mcp_standard_id_exact_filters)
+test_suite.append(test_mcp_standard_id_masked_filters)
+test_suite.append(test_mcp_extended_id_exact_filters)
+test_suite.append(test_mcp_extended_id_masked_filters)
 
 failures = []
 for test in test_suite:

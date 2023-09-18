@@ -1,12 +1,11 @@
 from mcp2515.canio import Message, RemoteTransmissionRequest
-from mcp2515.config import _spi, _cs_pin
+from mcp2515.config import spi, CS_PIN
 from mcp2515 import MCP2515 as CAN
 from utime import sleep
 
 
-can_bus = CAN(
-    _spi, _cs_pin, loopback=True, silent=True
-)  # use loopback to test without another device
+# use loopback to test without another device
+can_bus = CAN(spi, CS_PIN, loopback=True, silent=True) 
 
 while True:
     with can_bus.listen(timeout=1.0) as listener:

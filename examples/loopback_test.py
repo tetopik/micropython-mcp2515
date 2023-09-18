@@ -1,10 +1,10 @@
 from mcp2515.canio import Timer, Message, RemoteTransmissionRequest
-from mcp2515.config import _spi, _cs_pin
+from mcp2515.config import spi, CS_PIN
 from mcp2515 import MCP2515 as CAN
 
 
 def bus():
-    return CAN(_spi, _cs_pin, loopback=True, silent=True)
+    return CAN(spi, CS_PIN, loopback=True, silent=True)
 
 mb1 = [0xDE, 0xAD, 0xBE, 0xEF]
 mb2 = [0xCA, 0xFE, 0xFA, 0xDE]
