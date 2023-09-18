@@ -1,4 +1,4 @@
-# Micropython-MCP2515
+# Micropython_MCP2515
 Micropython driver to communicate to CAN buses using MPC2515 via SPI port
 
 This driver is based on capella-ben' microPython_MCP2515 driver. I modified the original driver to:
