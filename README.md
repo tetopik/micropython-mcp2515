@@ -7,4 +7,4 @@ This driver is based on capella-ben' microPython_MCP2515 driver. I modified the 
 3. Add config file for easy implementing
 4. More examples
 
-Check adafruit_mcp2515 for documentation.
+Check Adafruit_CircuitPython_MCP2515 for documentation.
