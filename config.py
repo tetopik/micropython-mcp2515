@@ -6,7 +6,7 @@ from umachine import freq, Pin
 _USE_HW_SPI = False
 
 if not _USE_HW_SPI:
-    from umachine import SoftSPI as SPI
+    from umachine import SoftSPI
     
     _sck_pin  = const(35)
     _mosi_pin = const(33)
@@ -17,12 +17,12 @@ if not _USE_HW_SPI:
     if freq() is not _max_cpu_freq:
         freq(_max_cpu_freq)
 
-    _spi = SPI(
+    _spi = SoftSPI(
         sck=Pin(_sck_pin),
         mosi=Pin(_mosi_pin),
         miso=Pin(_miso_pin),
         baudrate=1_200_000,
-        firstbit=SPI.MSB,
+        firstbit=SoftSPI.MSB,
         polarity=0,
         phase=0)
 
