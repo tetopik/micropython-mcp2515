@@ -5,7 +5,7 @@ from urandom import randint
 from ustruct import pack
 
 
-sender  = Timer(2)
+sender = Timer(2)
 
 while True:
     if sender.expired:
