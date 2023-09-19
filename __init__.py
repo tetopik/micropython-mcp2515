@@ -242,7 +242,7 @@ class MCP2515:  # pylint:disable=too-many-instance-attributes
         :param int baudrate: The bit rate of the bus in Hz. All devices on\
             the bus must agree on this value. Defaults to 500000.
         :param Literal crystal_freq: MCP2515 crystal frequency. Valid values are:\
-            16000000, 10000000 and 8000000. Defaults to 8000000 (16MHz).\
+            16000000, 10000000 and 8000000. Defaults to 8000000 (8MHz).\
         :param bool loopback: Receive only packets sent from this device, and send only to this\
         device. Requires that `silent` is also set to `True`, but only prevents transmission to\
         other devices. Otherwise the send/receive behavior is normal.
