@@ -1,4 +1,4 @@
-from utime import ticks_ms
+from time import ticks_ms
 
 
 class Timer:
