@@ -1,13 +1,13 @@
 from micropython import const
 from mcp2515 import MCP2515 as CAN
-from umachine import freq, Pin
+from machine import freq, Pin
 
 
 _USE_HW_SPI = False
 CS_PIN      = const(16)
 
 if not _USE_HW_SPI:
-    from umachine import SoftSPI
+    from machine import SoftSPI
     
     _SCK_PIN   = const(35)
     _MOSI_PIN  = const(33)
@@ -27,7 +27,7 @@ if not _USE_HW_SPI:
         phase=0)
 
 else:
-    from umachine import SPI
+    from machine import SPI
     
     spi = SPI(
         1,
@@ -40,7 +40,7 @@ print('FREQ\t: ', freq(), '\nSPI\t: ', spi, '\nCS\t: ', CS_PIN)
 
 can_bus = CAN(spi, CS_PIN,
     baudrate     = 500_000,    # 125_000, 500_000, 1_000_000, etc  (bps)
-    crystal_freq = 8_000_000,  # 8_000_000, 10_000_000, 16_000_000 (Hz)
+    crystal_freq = 16_000_000,  # 8_000_000, 10_000_000, 16_000_000 (Hz)
     loopback     = False,
     silent       = False,
     auto_restart = False,
