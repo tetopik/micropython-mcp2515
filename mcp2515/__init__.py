@@ -1,7 +1,7 @@
 from collections import namedtuple
-from ustruct import unpack_from, pack_into
-from utime import sleep
-from umachine import Pin
+from struct import unpack_from, pack_into
+from time import sleep
+from machine import Pin
 from micropython import const
 from .canio import *
 
@@ -12,7 +12,7 @@ except ImportError:
 
 
 __version__ = "0.0.0+auto.0"
-__repo__ = ""
+__repo__ = "https://github.com/tetopik/micropython_mcp2515.git"
 
 
 # modes
