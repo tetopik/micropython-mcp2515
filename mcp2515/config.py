@@ -4,10 +4,11 @@ from machine import freq, Pin
 
 
 _USE_HW_SPI = False
-CS_PIN      = const(16)
 
 if not _USE_HW_SPI:
     from machine import SoftSPI
+    
+    CS_PIN = 16
     
     _SCK_PIN   = const(35)
     _MOSI_PIN  = const(33)
@@ -28,6 +29,8 @@ if not _USE_HW_SPI:
 
 else:
     from machine import SPI
+
+    CS_PIN = 10
     
     spi = SPI(
         1,
